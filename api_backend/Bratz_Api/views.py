@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.http import JsonResponse
 from .models import Bratz
 from .serializers import BratzSerializers
-from .form import BratzForm  # Asegúrate de que este es el archivo correcto
+from .form import BratzForm 
 
 def get_all_Bratz():
     bratz = Bratz.objects.all().order_by("name")
