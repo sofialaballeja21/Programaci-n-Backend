@@ -1,8 +1,13 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
+
+from Funko_Api.form import FunkoForm, UserForm
 
 from Funko_Api.models import Funko
 from Funko_Api.serialarzers import FunkoSerializer
+from django.middleware.csrf import get_token
 # Create your views here.
 
 
@@ -24,3 +29,13 @@ def users_rest(reqest):
     return JsonResponse("Ok", safe=False)
 
 
+class NewFunkoView(CreateView):
+    form_class = FunkoForm
+    template_name = 'form_funko.html'
+    success_url = '/index_funkos/'
+
+
+class NewUserView(CreateView):
+    form_class = UserForm
+    template_name = 'form_funko.html'
+    success_url = '/'

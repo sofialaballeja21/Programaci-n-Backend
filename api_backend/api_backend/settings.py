@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Funko_Api.apps.FunkoApiConfig',
+    'pokemon.apps.PokemonConfig',
+    'Simpson_Api.apps.SimpsonApiConfig',
+    'Bratz_Api.apps.BratzApiConfig',
+    'Song_Api.apps.SongApiConfig',
     
 ]
 
@@ -57,7 +61,8 @@ ROOT_URLCONF = 'api_backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'Funko_Api/template', 'pokemon/Templates'],
+        'DIRS': [BASE_DIR / 'Funko_Api/template', 'pokemon/Templates', 'Simpson/Templates', 'Bratz_Api/Template',
+                 'Song_Api/Template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
